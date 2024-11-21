@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s15_UsignJPAEntities/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s16_JPARelationships/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s19_SpringDataRepositories/demo/pom.xml" />
       </list>
     </option>
   </component>
