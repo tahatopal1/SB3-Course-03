@@ -1,0 +1,89 @@
+### SOLID Principles of Object-Oriented Programming
+
+#### **Introduction**
+- Originated from Robert C. Martin (Uncle Bob) in 1995.
+- Detailed in his book: *Agile Software Development: Principles, Patterns, and Practices*.
+- Acronym coined by Michael Feathers.
+- Focus on writing clean, scalable, maintainable, and testable code.
+
+---
+
+### **The SOLID Principles**
+
+#### **1. Single Responsibility Principle (SRP)**
+- **Definition**: A class should have only one reason to change, meaning it should perform one responsibility or function.
+- **Guidelines**:
+  - Keep classes small and focused.
+  - Avoid "God classes" or massive classes that do too much.
+  - A class with too many responsibilities becomes difficult to maintain and test.
+  - Example: Split a 2000-line class into smaller, logically cohesive classes.
+- **Benefits**:
+  - Improved readability and maintainability.
+  - Easier testing due to focused responsibilities.
+
+---
+
+#### **2. Open-Closed Principle (OCP)**
+- **Definition**: A class should be open for extension but closed for modification.
+- **Key Points**:
+  - Extend behavior via inheritance or composition rather than modifying existing code.
+  - Avoid frequent code changes to minimize risks and maintain stability.
+- **Techniques**:
+  - Use abstract base classes.
+  - Encapsulate variables with private access and provide controlled access using getters and setters.
+- **Analogy**:
+  - Adding functionality should feel like putting on a coat, not performing open-heart surgery.
+
+---
+
+#### **3. Liskov Substitution Principle (LSP)**
+- **Definition**: Objects of a superclass should be replaceable with objects of their subclasses without altering the program's correctness.
+- **Key Points**:
+  - Subtypes must honor the behavior of their base types.
+  - Violations occur when a subclass does not fulfill the promises of its superclass.
+- **Example**:
+  - A square can be a rectangle, but not all rectangles can be treated as squares.
+- **Benefits**:
+  - Ensures that inheritance hierarchies remain logical and robust.
+  - Prevents bugs caused by unexpected behavior in subclasses.
+
+---
+
+#### **4. Interface Segregation Principle (ISP)**
+- **Definition**: A class should not be forced to implement interfaces it does not use.
+- **Key Points**:
+  - Design fine-grained, specific interfaces for clients rather than one large general-purpose interface.
+  - Keeps components focused and avoids "God interfaces."
+- **Relation to SRP**:
+  - Both emphasize keeping responsibilities focused.
+- **Benefits**:
+  - Reduces unnecessary dependencies.
+  - Promotes reusability and flexibility.
+
+---
+
+#### **5. Dependency Inversion Principle (DIP)**
+- **Definition**: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+- **Key Points**:
+  - Details should not depend on abstractions; abstractions should not depend on details.
+  - Higher-level and lower-level objects should collaborate via shared abstractions.
+- **Analogy**:
+  - Like a wall socket that works with different devices (e.g., a lamp, TV, or radio) via a standard interface.
+- **Misconceptions**:
+  - DIP is not the same as Dependency Injection (DI).
+  - DIP is about designing loosely coupled abstractions; DI is about providing objects with their dependencies.
+- **Benefits**:
+  - Enhances flexibility and scalability.
+  - Allows components to work independently and be easily swapped or reused.
+
+---
+
+### **Summary**
+- **Purpose**: To improve code quality by enforcing principles that make it easier to maintain, test, and extend.
+- **Key Theme**: Avoid tight coupling and write clean, modular code.
+- **Pragmatism**:
+  - Adhere to the principles without being overly rigid.
+  - Example: A controller handling multiple related operations (e.g., product save, update, delete) is acceptable if the operations are cohesive.
+- **Outcome**:
+  - Better-designed applications.
+  - Improved scalability, maintainability, and flexibility.

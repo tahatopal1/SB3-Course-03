@@ -7,6 +7,15 @@
         <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s15_UsignJPAEntities/demo/pom.xml" />
         <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s16_JPARelationships/demo/pom.xml" />
         <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s19_SpringDataRepositories/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s20_InitializingDataWithSpring/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s20_Assignment01/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s21_SomeMoreRelationships/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s22_H2Console/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s24_ServiceLayer/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s25_ControllerLayer/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s26_ThymeleafTemplates/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s26_Assignment02/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s29_Assignment03/demo/pom.xml" />
       </list>
     </option>
   </component>
