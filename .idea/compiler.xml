@@ -11,6 +11,7 @@
         <module name="demo (4)" />
         <module name="demo (10)" />
         <module name="demo (3)" />
+        <module name="demo (11)" />
         <module name="demo (6)" />
         <module name="demo (5)" />
         <module name="demo (8)" />
@@ -25,6 +26,7 @@
       <module name="demo" options="-parameters" />
       <module name="demo (1)" options="-parameters" />
       <module name="demo (10)" options="-parameters" />
+      <module name="demo (11)" options="-parameters" />
       <module name="demo (2)" options="-parameters" />
       <module name="demo (3)" options="-parameters" />
       <module name="demo (4)" options="-parameters" />
