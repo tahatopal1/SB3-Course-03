@@ -1,0 +1,77 @@
+### Summary: Using `@Qualifier` in Spring Beans
+
+- **Purpose of `@Qualifier`:**
+  - Used when multiple beans of the same type exist, and you need to specify which one to inject.
+  - Helps resolve ambiguity in dependency injection by explicitly naming the desired bean.
+
+---
+
+### Key Concepts:
+
+1. **Default Bean Naming in Spring:**
+   - By default, Spring names beans using the class name with the first letter in lowercase.
+     Example: `GreetingServiceImpl` becomes `greetingServiceImpl`.
+
+2. **Using `@Qualifier`:**
+   - Applied to specify a bean to be injected when multiple candidates exist.
+   - Can be used on:
+     - Constructor parameters
+     - Properties with `@Autowired`
+     - Setter methods or their parameters.
+
+3. **Custom Bean Naming:**
+   - You can give a bean a custom name using `@Service("customName")`.
+   - This custom name can then be used with `@Qualifier`.
+
+---
+
+### Injection Scenarios:
+
+#### 1. **Property Injection:**
+   - Use `@Qualifier` on the property itself:
+     ```java
+     @Autowired
+     @Qualifier("customBeanName")
+     private GreetingService greetingService;
+     ```
+
+#### 2. **Constructor Injection:**
+   - Specify `@Qualifier` in the constructor parameter:
+     ```java
+     public MyController(@Qualifier("customBeanName") GreetingService greetingService) {
+         this.greetingService = greetingService;
+     }
+     ```
+
+#### 3. **Setter Injection:**
+   - Add `@Qualifier` to the setter method or its parameter:
+     ```java
+     @Autowired
+     public void setGreetingService(@Qualifier("customBeanName") GreetingService greetingService) {
+         this.greetingService = greetingService;
+     }
+     ```
+
+---
+
+### Key Observations:
+
+- **Setter-Based Injection Nuance:**
+  - If `@Autowired` is used on the property, the setter is bypassed, likely via reflection.
+  - If you prefer setter injection, ensure `@Qualifier` is applied to the setter or its parameters.
+
+- **Constructor Injection Preferred:**
+  - Constructor injection is generally recommended as it ensures dependencies are fully initialized at object creation time.
+  - Setter-based injection can lead to uninitialized dependencies if not carefully managed.
+
+---
+
+### Best Practices:
+
+1. **Favor Constructor Injection:** Ensures clarity and prevents uninitialized dependencies.
+2. **Use `@Qualifier` for Disambiguation:** Explicitly specify the desired bean when multiple beans exist.
+3. **Avoid Field Injection Warnings:** Modern coding standards discourage direct field injection.
+
+---
+
+This approach helps maintain clean, testable, and manageable Spring applications while providing precise control over dependency injection.

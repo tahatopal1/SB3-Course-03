@@ -17,6 +17,12 @@
         <option value="$PROJECT_DIR$/u02_BuildingSpringBootApp/s26_Assignment02/demo/pom.xml" />
         <option value="$PROJECT_DIR$/u03_DependencyInjection/s29_Assignment03/demo/pom.xml" />
         <option value="$PROJECT_DIR$/u03_DependencyInjection/s31_TheSpringContext/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s32_SpringTestContext/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s34_DependenciesWithoutInjection/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s35_DependencyInjectionWithoutSpring/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s36_DependencyInjectionUsingSpring/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s37_PrimaryBeans/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/u03_DependencyInjection/s38_Qualifiers/demo/pom.xml" />
       </list>
     </option>
   </component>

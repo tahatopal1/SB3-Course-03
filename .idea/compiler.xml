@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo (2)" />
-        <module name="demo (1)" />
-        <module name="demo (4)" />
+        <module name="demo (16)" />
+        <module name="demo (17)" />
+        <module name="demo (14)" />
+        <module name="demo (15)" />
+        <module name="demo (12)" />
+        <module name="demo (13)" />
         <module name="demo (10)" />
-        <module name="demo (3)" />
         <module name="demo (11)" />
         <module name="demo (6)" />
         <module name="demo (5)" />
@@ -18,6 +20,10 @@
         <module name="demo (7)" />
         <module name="demo" />
         <module name="demo (9)" />
+        <module name="demo (2)" />
+        <module name="demo (1)" />
+        <module name="demo (4)" />
+        <module name="demo (3)" />
       </profile>
     </annotationProcessing>
   </component>
@@ -27,6 +33,12 @@
       <module name="demo (1)" options="-parameters" />
       <module name="demo (10)" options="-parameters" />
       <module name="demo (11)" options="-parameters" />
+      <module name="demo (12)" options="-parameters" />
+      <module name="demo (13)" options="-parameters" />
+      <module name="demo (14)" options="-parameters" />
+      <module name="demo (15)" options="-parameters" />
+      <module name="demo (16)" options="-parameters" />
+      <module name="demo (17)" options="-parameters" />
       <module name="demo (2)" options="-parameters" />
       <module name="demo (3)" options="-parameters" />
       <module name="demo (4)" options="-parameters" />

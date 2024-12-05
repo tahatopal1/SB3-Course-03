@@ -1,0 +1,24 @@
+### Summary: Using `@Primary` in Spring Beans
+
+- **Purpose of `@Primary`:** Used when multiple bean implementations exist for the same interface. It tells Spring to prioritize a specific bean for dependency injection when no specific qualifier is provided.
+
+- **Scenario:**
+  - If there are multiple beans of the same type (e.g., `GreetingServiceImpl` and `GreetingServicePrimary`), Spring will throw an error because it cannot determine which bean to inject.
+
+- **Solution with `@Primary`:**
+  - Annotate the preferred implementation (e.g., `GreetingServicePrimary`) with `@Primary`.
+  - Spring will automatically inject this bean when no qualifier is specified in the injection point.
+
+- **Behavior:**
+  - The `@Primary` bean becomes the default choice.
+  - Other beans of the same type remain in the Spring context but are not autowired unless explicitly specified.
+
+- **Example Flow:**
+  - Initially, an injection attempt fails when multiple beans exist.
+  - After marking one bean with `@Primary`, Spring successfully injects it by default into all relevant contexts.
+
+- **Use Cases:**
+  - Simplifies scenarios where a "default" implementation is needed.
+  - Provides flexibility to have alternate implementations available in the context for explicit use.
+
+- **Next Steps:** Explore other methods to control autowiring in more complex scenarios.

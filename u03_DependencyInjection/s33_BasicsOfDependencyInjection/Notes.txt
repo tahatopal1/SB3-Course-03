@@ -1,0 +1,102 @@
+### Dependency Injection (DI) Overview
+
+#### **Definition**
+Dependency Injection is a design pattern that allows a class to declare its dependencies rather than creating them itself. These dependencies are then "injected" into the class by an external entity, such as a framework.
+
+---
+
+### **Key Concepts**
+
+1. **Dependency Injection Explained**:
+   - A class states what it *needs* (dependency), rather than creating it internally.
+   - The external entity (like Spring) provides the required dependency.
+   - Example analogy: Instead of a child getting something from the fridge themselves, they ask for it, and it is provided.
+
+2. **Inversion of Control (IoC)**:
+   - IoC refers to the transfer of control over dependency creation to a framework.
+   - The application code doesn't manage dependencies; the framework does.
+   - Example: Spring manages which database connection (H2 or MySQL) to inject based on configuration at runtime.
+
+3. **How DI Works**:
+   - Injection can occur in different ways:
+     - **Constructor Injection** (Preferred): Dependencies are passed via the class constructor.
+     - **Setter Injection**: Dependencies are passed via setter methods after the object is created.
+     - **Field Injection** (Least Preferred): Directly set on fields, often using reflection. This approach is discouraged due to performance and testing challenges.
+
+---
+
+### **Types of Dependency Injection**
+
+1. **By Constructor** (Most Preferred):
+   - Ensures the object cannot exist without its dependencies.
+   - Dependencies are final and immutable once set.
+   - Promotes clarity and immutability.
+
+2. **By Setter**:
+   - Useful when a dependency is optional.
+   - Allows modifying dependencies after object creation.
+
+3. **By Field/Property** (Discouraged):
+   - Spring uses reflection to inject dependencies.
+   - Slower and makes testing harder.
+   - Violates immutability and clarity principles.
+
+---
+
+### **Benefits of Dependency Injection**
+- **Loosely Coupled Code**:
+  - Classes depend on abstractions (interfaces) rather than concrete implementations.
+  - Allows easy swapping of implementations.
+
+- **Improved Testability**:
+  - Mock dependencies can be easily injected during unit testing.
+  - Reduces reliance on actual implementations.
+
+- **Flexibility**:
+  - Applications can switch between different configurations (e.g., different databases) at runtime.
+
+---
+
+### **Best Practices**
+
+1. **Use Constructor Injection**:
+   - Declare dependencies as `private final` and initialize them in the constructor.
+
+2. **Inject Interfaces, Not Concrete Classes**:
+   - Promotes flexibility and adheres to the Interface Segregation Principle.
+   - Makes mocking dependencies for testing simpler.
+
+3. **Be Pragmatic**:
+   - Not all objects require dependency injection. Use DI where it adds value (e.g., services, repositories).
+   - Avoid DI for trivial objects (e.g., a simple date formatter).
+
+4. **Avoid Field Injection**:
+   - Makes code harder to test and maintain.
+   - Constructor injection ensures dependencies are always available when the object is created.
+
+---
+
+### **Dependency Injection vs. Inversion of Control**
+
+| **Aspect**                | **Dependency Injection**                           | **Inversion of Control (IoC)**             |
+|---------------------------|----------------------------------------------------|--------------------------------------------|
+| **Definition**            | Act of providing dependencies to a class.          | Transfer of control over dependency management to a framework. |
+| **Focus**                 | Composition of objects.                            | Runtime environment control.               |
+| **Example**               | Injecting a data source into a service.            | Framework decides whether to use H2 or MySQL at runtime. |
+| **Managed By**            | The developer or test cases during testing.        | The framework (e.g., Spring) during runtime.|
+
+---
+
+### **Real-World Example**
+- An application using Spring can switch between:
+  - H2 in-memory database for development.
+  - MySQL database for production.
+- The framework decides at runtime which dependency to inject based on configuration.
+
+---
+
+### **Summary**
+- Dependency Injection simplifies development by separating dependency creation from the class.
+- IoC allows frameworks like Spring to manage dependency injection, enabling flexibility and scalability.
+- Following best practices, such as constructor injection and coding to interfaces, results in maintainable, testable, and clean code.
+- Use DI judiciously, focusing on areas where it adds value.
