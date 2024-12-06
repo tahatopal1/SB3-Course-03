@@ -1,0 +1,75 @@
+### Summary: Beginner’s Guide to REST
+
+REST (Representational State Transfer) is a widely used architecture for building APIs due to its simplicity and flexibility. It leverages HTTP methods to manage server-side resources, typically using JSON or XML for communication.
+
+---
+
+### **Key Concepts of REST:**
+
+1. **REST Principles:**
+   - **Representation:** Data is transferred as JSON or XML.
+   - **State Transfer:** Performed via HTTP.
+   - **Statelessness:** No session data is maintained by the server. Each request is independent.
+
+2. **Terminology:**
+   - **HTTP Methods (Verbs):** Define actions like GET, POST, PUT, DELETE, PATCH.
+   - **Messages:** Payloads containing the request or response data.
+   - **URI (Uniform Resource Identifier):** Uniquely identifies a resource (e.g., `/books/1` refers to the book with ID 1).
+   - **Idempotence:** Some methods can be called multiple times without affecting the server state after the first call.
+
+3. **HATEOAS (Hypermedia as the Engine of Application State):**
+   - Advanced APIs include links in responses to guide clients about available actions dynamically.
+
+---
+
+### **HTTP Methods and CRUD Operations:**
+
+1. **GET:**
+   - **Purpose:** Fetch a resource.
+   - **CRUD Equivalent:** Read.
+   - **Characteristics:** Safe, idempotent.
+
+2. **PUT:**
+   - **Purpose:** Create or update a resource at a specific URI.
+   - **CRUD Equivalent:** Create/Update.
+   - **Characteristics:** Idempotent but not safe.
+
+3. **POST:**
+   - **Purpose:** Create a new resource.
+   - **CRUD Equivalent:** Create.
+   - **Characteristics:** Non-idempotent, not safe.
+
+4. **PATCH:**
+   - **Purpose:** Partially update a resource.
+   - **CRUD Equivalent:** Update.
+   - **Characteristics:** Typically idempotent but not guaranteed, not safe.
+
+5. **DELETE:**
+   - **Purpose:** Remove a resource.
+   - **CRUD Equivalent:** Delete.
+   - **Characteristics:** Idempotent, not safe.
+
+---
+
+### **Comparison of Safe and Idempotent Methods:**
+
+1. **Safe Methods:**
+   - Do not alter server state.
+   - Examples: GET, HEAD, OPTIONS.
+
+2. **Idempotent Methods:**
+   - Repeated calls yield the same result.
+   - Examples: GET, PUT, DELETE, OPTIONS.
+
+3. **Non-Idempotent Methods:**
+   - Repeated calls can alter server state differently.
+   - Example: POST.
+
+---
+
+### **REST in Practice:**
+- REST APIs are not governed by formal committees, unlike SOAP, but industry conventions guide their implementation.
+- Advanced APIs may implement HATEOAS for dynamic exploration of resources and actions.
+- Understanding CRUD mappings to HTTP methods is essential for REST API design.
+
+REST simplifies communication between clients and servers using HTTP, making it the standard for modern web services.

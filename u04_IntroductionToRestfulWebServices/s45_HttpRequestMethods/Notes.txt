@@ -1,0 +1,95 @@
+### Summary: HTTP Request Methods and Status Codes
+
+HTTP request methods, also called verbs, indicate the desired action to be performed by the server. They form the backbone of RESTful APIs, allowing for interaction with resources.
+
+---
+
+### **HTTP Request Methods:**
+
+1. **GET**:
+   - Retrieves data from the server.
+   - Most commonly used by browsers.
+   - Safe and idempotent.
+
+2. **HEAD**:
+   - Similar to GET but retrieves only meta-information (headers) without the response body.
+   - Safe and idempotent.
+
+3. **POST**:
+   - Sends data to the server, typically to create a resource.
+   - Not idempotent (e.g., multiple calls may create duplicate resources).
+
+4. **PUT**:
+   - Creates or updates a resource at a specific URI.
+   - Idempotent (repeated calls result in the same outcome).
+
+5. **DELETE**:
+   - Deletes a specified resource.
+   - Idempotent (repeated calls will have the same result).
+
+6. **PATCH**:
+   - Partially modifies a resource.
+   - Rarely used in practice.
+
+7. **TRACE**:
+   - Echoes the received request to debug if intermediaries altered it.
+   - Safe and idempotent.
+
+8. **OPTIONS**:
+   - Retrieves supported HTTP methods for a resource.
+   - Safe and idempotent.
+
+9. **CONNECT**:
+   - Creates a TCP/IP tunnel, often for HTTPS traffic through an HTTP proxy.
+   - Rarely seen in typical development.
+
+---
+
+### **Key Concepts:**
+
+1. **Safe Methods:**
+   - Do not modify server state.
+   - Includes GET, HEAD, OPTIONS, and TRACE.
+
+2. **Idempotent Methods:**
+   - Repeated calls produce the same result.
+   - Includes PUT, DELETE, GET, HEAD, OPTIONS, and TRACE.
+   - Note: This depends on proper implementation by developers.
+
+3. **Non-Idempotent Methods:**
+   - Repeated calls may cause different outcomes.
+   - Includes POST.
+
+---
+
+### **HTTP Status Codes:**
+
+1. **1xx (Informational):**
+   - Provide interim responses, rarely used.
+
+2. **2xx (Success):**
+   - **200 OK:** Request succeeded.
+   - **201 Created:** Resource was successfully created.
+   - **204 No Content:** Request succeeded without returning a body.
+
+3. **3xx (Redirection):**
+   - **301 Moved Permanently:** Resource has moved to a new URI.
+
+4. **4xx (Client Errors):**
+   - **400 Bad Request:** Invalid syntax or missing data.
+   - **401 Unauthorized:** Authentication required.
+   - **404 Not Found:** Requested resource does not exist.
+
+5. **5xx (Server Errors):**
+   - **500 Internal Server Error:** General server failure.
+   - **503 Service Unavailable:** Temporary server overload or maintenance.
+
+---
+
+### **Best Practices for RESTful APIs:**
+
+- Use the appropriate HTTP method for the action (e.g., GET for reading, POST for creating).
+- Return meaningful and correct status codes for responses.
+- Ensure safe and idempotent methods behave as expected to avoid unintended consequences.
+
+Understanding these HTTP methods and status codes is crucial for building reliable and well-designed RESTful APIs.
