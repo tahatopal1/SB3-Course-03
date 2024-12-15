@@ -1,0 +1,85 @@
+### Summary: Richardson Maturity Model (RMM) - Steps Towards REST Excellence
+
+The **Richardson Maturity Model (RMM)**, created by Leonard Richardson in a 2008 presentation, describes the maturity levels of RESTful web services. It provides a framework for assessing the quality of a REST API based on its use of core REST principles.
+
+---
+
+### **Core Concepts**
+- **URIs:** Uniform Resource Identifiers.
+- **HTTP Verbs:** Actions like `GET`, `POST`, `PUT`, `DELETE`.
+- **Hypermedia (HATEOAS):** Hypermedia as the Engine of Application State, enabling self-discovery.
+
+---
+
+### **Levels of the Richardson Maturity Model**
+
+1. **Level 0: The Swamp of POX (Plain Old XML)**
+   - **Characteristics:**
+     - Treats HTTP as a transport protocol, ignoring REST principles.
+     - Uses a single URI and method for all interactions.
+     - Examples: RPC (Remote Procedure Call) or XML-RPC.
+   - **Drawbacks:**
+     - Not RESTful.
+     - Limited usability and flexibility.
+
+---
+
+2. **Level 1: Resources**
+   - **Characteristics:**
+     - Multiple URIs are used to identify distinct resources.
+     - Example:
+       - `GET /products/1234` → Retrieve product with ID `1234`.
+       - `GET /products/5678` → Retrieve product with ID `5678`.
+     - Still uses only one HTTP method, usually `GET`.
+   - **Improvement Over Level 0:**
+     - Resources are clearly identified.
+   - **Limitations:**
+     - Actions (create, update, delete) cannot be performed effectively.
+
+---
+
+3. **Level 2: HTTP Verbs**
+   - **Characteristics:**
+     - Incorporates **HTTP methods** (`GET`, `POST`, `PUT`, `DELETE`) to define actions on resources.
+     - Example:
+       - `GET /products/1234` → Retrieve product with ID `1234`.
+       - `PUT /products/1234` → Update product with ID `1234`.
+       - `DELETE /products/1234` → Delete product with ID `1234`.
+     - Combines resources (URIs) with verbs to achieve RESTful actions.
+   - **Advantages:**
+     - Fully aligns with REST principles.
+     - The most widely adopted standard in the industry.
+   - **Use Case:**
+     - Ideal for building practical and scalable REST APIs.
+
+---
+
+4. **Level 3: Hypermedia Controls (HATEOAS)**
+   - **Characteristics:**
+     - APIs include hypermedia links in responses, allowing clients to discover available actions dynamically.
+     - Example:
+       - Response to `GET /products/1234`:
+         ```json
+         {
+           "id": 1234,
+           "name": "Widget",
+           "links": [
+             {"rel": "self", "href": "/products/1234"},
+             {"rel": "update", "href": "/products/1234", "method": "PUT"},
+             {"rel": "delete", "href": "/products/1234", "method": "DELETE"}
+           ]
+         }
+         ```
+     - Provides API self-discovery and makes APIs more self-documenting.
+   - **Current State:**
+     - Not widely adopted yet but seen as the future of RESTful APIs.
+
+---
+
+### **Summary of Levels**
+- **Level 0 (POX):** Not RESTful. Avoid.
+- **Level 1 (Resources):** Start of REST principles with resource-based URIs.
+- **Level 2 (HTTP Verbs):** Widely used; standard RESTful implementation.
+- **Level 3 (HATEOAS):** Adds self-discovery for richer, dynamic client interactions.
+
+RMM highlights the progression from basic HTTP usage to fully RESTful and self-descriptive APIs, setting a clear path for building modern, scalable web services.
