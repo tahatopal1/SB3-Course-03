@@ -29,6 +29,7 @@
         <option value="$PROJECT_DIR$/u03_DependencyInjection/s42_SpringBeanLifeCycleDemo/demo/pom.xml" />
         <option value="$PROJECT_DIR$/u05_ProjectLombok/springmvc/pom.xml" />
         <option value="$PROJECT_DIR$/u06_SpringMVCRestServices/springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/u07_JUnitMockito/s71_MockMVCConfiguration/springmvc/pom.xml" />
       </list>
     </option>
   </component>
